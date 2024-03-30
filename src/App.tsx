@@ -10,6 +10,7 @@ import React from 'react';
 import { SetupScreen } from './pages/setup';
 import { BrowserRouter, Route, Routes } from 'react-router-dom';
 import { HomeScreen } from './pages/home-screen';
+import { ManageRoomsScreen } from './pages/manage-rooms';
 
 function App() {
   const prefersDarkMode = useMediaQuery('(prefers-color-scheme: dark)');
@@ -32,6 +33,7 @@ function App() {
           <Routes>
             <Route path="/" element={<HomeScreen />} />
             <Route path="/setup" element={<SetupScreen />} />
+            <Route path="/manage-rooms" element={<ManageRoomsScreen />} />
           </Routes>
         </BrowserRouter>
       </ThemeProvider>
