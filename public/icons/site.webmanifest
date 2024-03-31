@@ -1,6 +1,6 @@
 {
     "name": "Temperature Viewer",
-    "short_name": "tempPWA",
+    "short_name": "Temperatures",
     "icons": [
         {
             "src": "/icons/android-chrome-192x192.png",
@@ -13,8 +13,8 @@
             "type": "image/png"
         }
     ],
-    "theme_color": "#000000",
-    "background_color": "#000000",
+    "theme_color": "#054e97",
+    "background_color": "#054e97",
     "display": "standalone",
     "start_url": "https://temperature-viewer.vercel.app/"
 }
