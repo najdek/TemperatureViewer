@@ -2,7 +2,7 @@ import { Check } from "@mui/icons-material";
 import { Fab } from "@mui/material";
 import { useEffect, useState } from "react";
 
-export function FabButton(props) {
+export function FabButton(props:any) {
     const [fabRight, setFabRight] = useState(null);
 
     const pageContainer = props.pageContainer;

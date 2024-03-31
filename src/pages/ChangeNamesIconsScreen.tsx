@@ -1,4 +1,4 @@
-import { ListItem, IconButton, ListItemText, Container, List, ListItemButton, ListItemIcon } from "@mui/material";
+import { ListItem, ListItemText, Container, List, ListItemButton, ListItemIcon } from "@mui/material";
 import { useEffect, useState, useRef } from "react";
 import { useNavigate } from "react-router-dom";
 import Layout from "../Layout";
@@ -6,7 +6,7 @@ import { FabButton } from "../components/FabButton";
 import { getSensorCustomization } from "../sensorCustomization";
 import { SensorIcon } from "../components/SensorIcon";
 
-function ListSensors(props) {
+function ListSensors(props:any) {
     const navigate = useNavigate();
 
     useEffect(() => {
@@ -16,12 +16,12 @@ function ListSensors(props) {
         }
     }, [])
 
-    const handleListBtnClick = (sensor) => {
+    const handleListBtnClick = (sensor: string) => {
         navigate("/change-names-icons/" + sensor);
     }
 
     const sensorsOut: JSX.Element[] = [];
-    props.orderedSensorList.forEach((sensor) => {
+    props.orderedSensorList.forEach((sensor: string) => {
 
         const savedSensorCustomization = getSensorCustomization(sensor);
 

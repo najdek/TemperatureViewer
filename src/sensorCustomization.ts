@@ -1,11 +1,11 @@
-export function getSensorCustomization(sensor) {
+export function getSensorCustomization(sensor: string) {
     const all = JSON.parse(localStorage.getItem("sensorCustomization") || "{}");
     return all[sensor] || {};
 }
 
-export function setSensorCustomization(sensor, name, icon) {
+export function setSensorCustomization(sensor: string, name: string, icon: string) {
     let all = JSON.parse(localStorage.getItem("sensorCustomization") || "{}");
-    let data = {
+    const data = {
         name: name,
         icon: icon,
     }

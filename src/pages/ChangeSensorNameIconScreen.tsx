@@ -10,7 +10,7 @@ export function ChangeSensorNameIconScreen() {
     const navigate = useNavigate();
     const pageContainer = useRef<HTMLInputElement>(null);
     const params = useParams();
-    const sensorId = params.sensor;
+    const sensorId:string = params.sensor || "";
 
     const savedSensorCustomization = getSensorCustomization(sensorId);
 
@@ -47,22 +47,22 @@ export function ChangeSensorNameIconScreen() {
     )
 }
 
-function IconWrapper(props) {
+function IconWrapper(props:any) {
 
     const selectedIcon = props.passed.selectedIcon;
     const setSelectedIcon = props.passed.setSelectedIcon
 
-    const selectIcon = (icon) => {
+    const selectIcon = (icon: string) => {
         setSelectedIcon(icon);
     }
     return (
-        <IconButton onClick={() => selectIcon(props.icon)} size="large" color={props.icon == selectedIcon ? "success" : ""}>
+        <IconButton onClick={() => selectIcon(props.icon)} size="large" color={props.icon == selectedIcon ? "success" : "primary"}>
             {props.children}
         </IconButton>
     )
 }
 
-function IconList(props) {
+function IconList(props: any) {
     const selectedIcon = props.selectedIcon;
     const setSelectedIcon = props.setSelectedIcon
     const pass = {

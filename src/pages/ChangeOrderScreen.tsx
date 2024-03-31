@@ -7,7 +7,7 @@ import { useNavigate } from "react-router-dom";
 import { FabButton } from "../components/FabButton";
 import { JSX } from "react/jsx-runtime";
 
-function ListSensors(props) {
+function ListSensors(props:any) {
 
     useEffect(() => {
         const sensorList = localStorage.getItem("sensors");
@@ -16,7 +16,7 @@ function ListSensors(props) {
         }
     }, [])
 
-    const changeItemPosition = (sensor, change) => {
+    const changeItemPosition = (sensor: string, change: number) => {
         const newArray = props.orderedSensorList;
         const index = newArray.indexOf(sensor);
         newArray.splice(index + change, 0, newArray.splice(index, 1)[0]);
@@ -24,7 +24,7 @@ function ListSensors(props) {
     }
 
     const sensorsOut: JSX.Element[] = [];
-    props.orderedSensorList.forEach((sensor) => {
+    props.orderedSensorList.forEach((sensor:string) => {
         sensorsOut.push(
             <ListItem key={sensor} secondaryAction={
 

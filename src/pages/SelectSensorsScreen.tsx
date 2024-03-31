@@ -1,4 +1,4 @@
-import { Checkbox, Container, Fab, List, ListItem, ListItemButton, ListItemIcon, ListItemText } from "@mui/material";
+import { Checkbox, Container, List, ListItem, ListItemButton, ListItemIcon, ListItemText } from "@mui/material";
 import Layout from "../Layout";
 import { useEffect, useState } from "react";
 import { getAllTemps } from "../temp";
@@ -6,7 +6,7 @@ import { useRef } from "react";
 import { useNavigate } from "react-router-dom";
 import { FabButton } from "../components/FabButton";
 
-function ListSensors(props) {
+function ListSensors(props: any) {
 
     const [allSensors, setAllSensors] = useState(getAllTemps());
     const sensorsOut = [];
@@ -18,8 +18,8 @@ function ListSensors(props) {
         updateSensors();
     }, [])
 
-    const handleCheckSensor = (key) => {
-        let newArray = props.checkedSensors;
+    const handleCheckSensor = (key: string) => {
+        const newArray = props.checkedSensors;
         if (newArray.includes(key)) {
             newArray.splice(newArray.indexOf(key), 1);
         } else {
@@ -85,7 +85,7 @@ export function SelectSensorsScreen() {
                     </List>
                 </div>
             </Container>
-<FabButton clickfunction={handleFabClick} pageContainer={pageContainer} />
+            <FabButton clickfunction={handleFabClick} pageContainer={pageContainer} />
         </Layout>
 
     )
