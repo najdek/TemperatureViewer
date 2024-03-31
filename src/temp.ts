@@ -13,7 +13,7 @@ async function listAllRooms() {
     return data;
 }
 
-async function getTemps(rooms:Array<string>) {
+export async function getTemps(rooms:Array<string>) {
     let roomsString = "";
     rooms.forEach(function(room) {
         roomsString += room + ",";
