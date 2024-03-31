@@ -9,8 +9,10 @@ import CssBaseline from '@mui/material/CssBaseline';
 import React from 'react';
 import { SetupScreen } from './pages/setup';
 import { BrowserRouter, Route, Routes } from 'react-router-dom';
-import { HomeScreen } from './pages/home-screen';
-import { SelectSensorsScreen } from './pages/select-sensors';
+import { HomeScreen } from './pages/HomeScreen';
+import { SelectSensorsScreen } from './pages/SelectSensorsScreen';
+import { ChangeOrderScreen } from './pages/ChangeOrderScreen';
+import { ChangeNamesIconsScreen } from './pages/ChangeNamesIconsScreen';
 
 function App() {
   const prefersDarkMode = useMediaQuery('(prefers-color-scheme: dark)');
@@ -34,6 +36,8 @@ function App() {
             <Route path="/" element={<HomeScreen />} />
             <Route path="/setup" element={<SetupScreen />} />
             <Route path="/select-sensors" element={<SelectSensorsScreen />} />
+            <Route path="/change-order" element={<ChangeOrderScreen />} />
+            <Route path="/change-names-icons" element={<ChangeNamesIconsScreen />} />
           </Routes>
         </BrowserRouter>
       </ThemeProvider>
