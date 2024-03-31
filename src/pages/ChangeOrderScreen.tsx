@@ -27,18 +27,21 @@ function ListSensors(props) {
     props.orderedSensorList.forEach((sensor) => {
         sensorsOut.push(
             <ListItem key={sensor} secondaryAction={
-                props.orderedSensorList.indexOf(sensor) !== props.orderedSensorList.length - 1 && (
-                    <IconButton onClick={() => changeItemPosition(sensor, 1)} edge="end">
-                        <ArrowDownward />
-                    </IconButton>
-                )
+
+                <IconButton onClick={() => changeItemPosition(sensor, 1)} edge="end" disabled={
+                    props.orderedSensorList.indexOf(sensor) == props.orderedSensorList.length - 1
+                }>
+                    <ArrowDownward />
+                </IconButton>
+
             }>
                 {
-                    props.orderedSensorList.indexOf(sensor) !== 0 && (
-                        <IconButton onClick={() => changeItemPosition(sensor, -1)}>
-                            <ArrowUpward />
-                        </IconButton>
-                    )
+                    <IconButton onClick={() => changeItemPosition(sensor, -1)} disabled={
+                        props.orderedSensorList.indexOf(sensor) == 0
+                    }>
+                        <ArrowUpward />
+                    </IconButton>
+
                 }
                 <ListItemText className="text-center" primary={`${sensor}`} />
             </ListItem>

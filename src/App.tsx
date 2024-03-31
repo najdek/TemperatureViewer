@@ -13,6 +13,7 @@ import { HomeScreen } from './pages/HomeScreen';
 import { SelectSensorsScreen } from './pages/SelectSensorsScreen';
 import { ChangeOrderScreen } from './pages/ChangeOrderScreen';
 import { ChangeNamesIconsScreen } from './pages/ChangeNamesIconsScreen';
+import { ChangeSensorNameIconScreen } from './pages/ChangeSensorNameIconScreen';
 
 function App() {
   const prefersDarkMode = useMediaQuery('(prefers-color-scheme: dark)');
@@ -38,6 +39,7 @@ function App() {
             <Route path="/select-sensors" element={<SelectSensorsScreen />} />
             <Route path="/change-order" element={<ChangeOrderScreen />} />
             <Route path="/change-names-icons" element={<ChangeNamesIconsScreen />} />
+            <Route path="/change-names-icons/:sensor" element={<ChangeSensorNameIconScreen />} />
           </Routes>
         </BrowserRouter>
       </ThemeProvider>
